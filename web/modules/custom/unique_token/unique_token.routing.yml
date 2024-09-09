@@ -1,0 +1,32 @@
+entity.token.collection:
+  path: '/admin/structure/tokens'
+  defaults:
+    _entity_list: 'token'
+    _title: 'Tokens'
+  requirements:
+    _permission: 'administer tokens'
+entity.token.delete_form:
+  path: '/admin/structure/token/{token}/delete'
+  defaults:
+    _entity_form: 'token.delete'
+    _title: 'Delete Token'
+  requirements:
+    _permission: 'administer tokens'
+  options:
+    _admin_route: TRUE
+unique_token.batch_create_form:
+  path: '/admin/structure/tokens/create'
+  defaults:
+    _form: '\Drupal\unique_token\Form\TokenBatchCreateForm'
+    _title: 'Create Tokens'
+  requirements:
+    _permission: 'administer tokens'
+unique_token.manage_tokens:
+  path: '/admin/structure/tokens'
+  defaults:
+    _controller: '\Drupal\unique_token\Controller\TokenController::manageTokens'
+    _title: 'Manage Tokens'
+  requirements:
+    _permission: 'administer tokens'
+  options:
+    _admin_route: TRUE

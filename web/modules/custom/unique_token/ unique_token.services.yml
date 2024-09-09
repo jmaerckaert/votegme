@@ -1,0 +1,8 @@
+services:
+  unique_token.token_manager:
+    class: 'Drupal\unique_token\TokenManager'
+    arguments: ['@database']
+  plugin.webform.element.unique_token_hidden:
+    class: 'Drupal\unique_token\Plugin\WebformElement\UniqueTokenHidden'
+    tags:
+      - { name: webform.element }

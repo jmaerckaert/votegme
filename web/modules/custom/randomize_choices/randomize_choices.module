@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function randomize_choices_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (strpos($form_id, 'webform_element') !== FALSE) {
+    $element_type = $form_state->getFormObject()->getElementType();
+    if (in_array($element_type, ['webform_radios', 'webform_checkboxes'])) {
+      $form['advanced']['randomize_choices'] = [
+        '#type' => 'checkbox',
+        '#title' => t('Randomize choices'),
+        '#description' => t('Display the choices in a random order.'),
+        '#default_value' => $form_state->getValue(['#randomize_choices'], FALSE),
+      ];
+    }
+  }
+}

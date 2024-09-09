@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Unique Token module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function unique_token_schema() {
+  $schema['tokens'] = [
+    'description' => 'Stores unique tokens for webforms.',
+    'fields' => [
+      'id' => [
+        'description' => 'Primary Key: Unique token ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'token' => [
+        'description' => 'The unique token string.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'description' => 'The status of the token (used or unused).',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'webform_id' => [
+        'description' => 'The ID of the associated webform.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

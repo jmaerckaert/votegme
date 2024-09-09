@@ -1,0 +1,19 @@
+unique_token.admin:
+  title: 'Manage Tokens'
+  description: 'Manage and view tokens'
+  parent: entity.webform.collection
+  route_name: unique_token.manage_tokens
+  weight: 10
+
+unique_token.delete:
+  title: 'Delete Token'
+  route_name: entity.token.delete_form
+  menu_name: admin
+  weight: 20
+
+unique_token.batch_create:
+  title: 'Create Tokens'
+  description: 'Create multiple tokens'
+  parent: unique_token.admin
+  route_name: unique_token.batch_create_form
+  weight: 15

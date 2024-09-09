@@ -1,0 +1,8 @@
+name: 'Unique Token'
+type: module
+description: 'Generates unique tokens for webform URLs and handles their validation.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - webform:webform
+  - drupal:menu_ui

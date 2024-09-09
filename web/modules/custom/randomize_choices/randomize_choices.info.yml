@@ -1,0 +1,7 @@
+name: 'Randomize Choices'
+type: module
+description: 'Randomizes the order of choices for radio and checkbox elements in webforms.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - webform:webform

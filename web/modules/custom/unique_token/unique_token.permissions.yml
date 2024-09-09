@@ -1,0 +1,3 @@
+administer tokens:
+  title: 'Administer tokens'
+  description: 'Manage tokens and their statuses'
